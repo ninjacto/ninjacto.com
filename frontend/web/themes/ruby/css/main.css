@@ -9,7 +9,9 @@ display: block;
 max-width: 100%;
 height: auto;
 }
-
+body{
+    font-size: 16px;
+}
 .icon-4x{font-size: 50px;}
 .icon-5x {font-size: 5em;}
 .icon-6x{font-size: 20px;}
@@ -446,7 +448,7 @@ color: #8c8c8c;
 /***********************/
 /*    Blog Content     */
 /***********************/ 
-.blogPage { padding: 50px 30px 0 20px;}
+.blogPage { padding: 40px 30px 0 20px;}
 .shareit .social-box {
     background: #fff;
     font-size: 16px;
@@ -1193,7 +1195,7 @@ line-height: 24px;
 .bg-contact-social h3 span{color: #fff;}
 .bg-contact-social p,.bg-contact-social i{color: #fff;}
 .bg-contact-social .contact-icons i{color: #e54242;}
-.contact-form .form-group label{text-align: left;padding-right:0px;padding-left:0px;font-weight:normal;font-size: 13px;}
+.contact-form .form-group label{text-align: left;padding-right:0px;padding-left:0px;font-weight:normal;}
 .contact-form .form-group .col-sm-8{padding: 0px;}
 .contact-form .form-group .col-sm-10{padding: 0px;}
 .contact-form2 .form-group label{text-align: left;font-weight:normal;font-size: 13px;}
@@ -1202,7 +1204,7 @@ line-height: 24px;
 .form-control{border: 1px solid #eaeaea; border-radius: 3px;}
 .submit-button{position: absolute;right: 5px;bottom: 31px;}
 .submit-button button{background: #e54242;border: 2px solid #d03333;border-radius: 3px;color: #fff;padding: 7px 10px;}
-.bg-contact-social .col-md-6{background:#e54242 url('../content/contact-image.png') no-repeat right top; height: 487px;top: -5px;}
+.bg-contact-social .col-md-6{background:#e54242 url('../../../uploads/contact-image.png') no-repeat right top; height: 487px;top: -5px;}
 /************************/
 /*   Services Section   */
 /************************/
@@ -1518,4 +1520,10 @@ background: #fff;
   .portfolio-style-3 .grid-sizer { width: 100%; }
   .portfolio-style-3 .portfolio-item-3 { width:100%; }
   .table-titles { display: none; }
+}
+
+
+form div.required label.control-label:after {
+    content:" * ";
+    color:#e54242;
 }

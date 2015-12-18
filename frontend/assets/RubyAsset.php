@@ -28,7 +28,6 @@ class RubyAsset extends AssetBundle
         'css/prettyPhoto.css',
     ];
     public $js = [
-        'js/jquery-1.10.2.min.js',
         'js/jquery-ui.js',
         'js/modernizr.custom.js',
         'js/bootstrap.min.js',
