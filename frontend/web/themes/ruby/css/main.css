@@ -15,34 +15,34 @@ height: auto;
 .icon-6x{font-size: 20px;}
 .vertecHide { display:none;}
 #qLoverlay{ position:fixed; z-index:99999; top:0; left:0; width:100%; height:100%; background:#e54242;}
-.loadLogo { margin: 100px auto;}
+.loadLogo { margin: 200px auto 10px auto;}
 .loadLogo img { margin: 0 auto;}
-    .spinner {
-      width: 50px;
-      height: 50px;
-      background-color: #fff;
+.spinner {
+    width: 150px;
+    height: 150px;
+    /*background-color: #fff;*/
 
-      margin: 200px auto;
-      -webkit-animation: rotateplane 1.2s infinite ease-in-out;
-      animation: rotateplane 1.2s infinite ease-in-out;
-    }
+    margin: 100px auto;
+    -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+    animation: rotateplane 1.2s infinite ease-in-out;
+}
 
     @-webkit-keyframes rotateplane {
-      0% { -webkit-transform: perspective(120px) }
-      50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-      100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+      0% { -webkit-transform: perspective(220px) }
+      50% { -webkit-transform: perspective(220px) rotateX(180deg) }
+      100% { -webkit-transform: perspective(220px) rotateX(180deg)  rotateY(180deg) }
     }
 
     @keyframes rotateplane {
       0% {
-        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        transform: perspective(220px) rotateY(0deg) rotateX(0deg);
+        -webkit-transform: perspective(220px) rotateY(0deg) rotateX(0deg);
       } 50% {
-        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        transform: perspective(220px) rotateY(-180.1deg) rotateX(0deg);
+        -webkit-transform: perspective(220px) rotateY(-180.1deg) rotateX(0deg);
       } 100% {
-        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        transform: perspective(220px) rotateY(-180deg) rotateX(-179.9deg);
+        -webkit-transform: perspective(220px) rotateY(-180deg) rotateX(-179.9deg);
       }
     }
 .container { margin-right: 0; margin-left: 0; width: 100%; max-width: 100%; }
@@ -446,7 +446,7 @@ color: #8c8c8c;
 /***********************/
 /*    Blog Content     */
 /***********************/ 
-.blogPage { padding: 0 30px 0 20px;}
+.blogPage { padding: 50px 30px 0 20px;}
 .shareit .social-box {
     background: #fff;
     font-size: 16px;

@@ -23,7 +23,7 @@ RubyAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body class="blog">
-    <div id="qLoverlay"><div class="loadLogo"><img src="<?= $this->theme->getUrl('img/logo.png')?>"></div><div class="spinner"></div></div>
+    <div id="qLoverlay"><div class="loadLogo"><img class="spinner" src="<?= $this->theme->getUrl('img/logo.png')?>"></div></div>
     <?php $this->beginBody() ?>
     <div id="vertec-layout">
         <div class="mobileNav">
