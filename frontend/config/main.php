@@ -28,6 +28,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'view' => [
+            'theme' => [
+                'basePath' => '@app/themes/ruby',
+                'baseUrl' => '@web/themes/ruby',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/ruby',
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

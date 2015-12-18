@@ -1,0 +1,214 @@
+@font-face {
+	font-family: 'vertec';
+	src:url('../fonts/vertec.eot');
+	src:url('../fonts/vertec.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/vertec.woff') format('woff'),
+		url('../fonts/vertec.ttf') format('truetype'),
+		url('../fonts/vertec.svg#vertec') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'vertec';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="vertec-"] {
+*/
+.vertec-shopmenu, .vertec-shop, .vertec-settings, .vertec-search, .vertec-science, .vertec-sandtime, .vertec-rss, .vertec-responsive, .vertec-radiocheck, .vertec-post, .vertec-portfolio, .vertec-pinterest, .vertec-photo, .vertec-pen, .vertec-pages, .vertec-myspace, .vertec-mobile, .vertec-lock, .vertec-list, .vertec-link, .vertec-lamp, .vertec-label, .vertec-image, .vertec-imac, .vertec-html5, .vertec-home, .vertec-google, .vertec-globe, .vertec-flicker, .vertec-face, .vertec-envelope, .vertec-dribble, .vertec-directionn, .vertec-direction, .vertec-digg2, .vertec-digg, .vertec-date, .vertec-comments, .vertec-clock2, .vertec-clock, .vertec-brain, .vertec-blog, .vertec-youtube, .vertec-yahoo, .vertec-wordpress, .vertec-vine, .vertec-video, .vertec-tweet, .vertec-truck, .vertec-tick, .vertec-telephone, .vertec-stumbleupon, .vertec-social-whale, .vertec-socialman, .vertec-social2, .vertec-skype, .vertec-sign, .vertec-shortcodes {
+	font-family: 'vertec';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.vertec-shopmenu:before {
+	content: "\e000";
+}
+.vertec-shop:before {
+	content: "\e001";
+}
+.vertec-settings:before {
+	content: "\e002";
+}
+.vertec-search:before {
+	content: "\e003";
+}
+.vertec-science:before {
+	content: "\e004";
+}
+.vertec-sandtime:before {
+	content: "\e005";
+}
+.vertec-rss:before {
+	content: "\e006";
+}
+.vertec-responsive:before {
+	content: "\e007";
+}
+.vertec-radiocheck:before {
+	content: "\e008";
+}
+.vertec-post:before {
+	content: "\e009";
+}
+.vertec-portfolio:before {
+	content: "\e00a";
+}
+.vertec-pinterest:before {
+	content: "\e00b";
+}
+.vertec-photo:before {
+	content: "\e00c";
+}
+.vertec-pen:before {
+	content: "\e00d";
+}
+.vertec-pages:before {
+	content: "\e00e";
+}
+.vertec-myspace:before {
+	content: "\e00f";
+}
+.vertec-mobile:before {
+	content: "\e010";
+}
+.vertec-lock:before {
+	content: "\e011";
+}
+.vertec-list:before {
+	content: "\e012";
+}
+.vertec-link:before {
+	content: "\e013";
+}
+.vertec-lamp:before {
+	content: "\e014";
+}
+.vertec-label:before {
+	content: "\e015";
+}
+.vertec-image:before {
+	content: "\e016";
+}
+.vertec-imac:before {
+	content: "\e017";
+}
+.vertec-html5:before {
+	content: "\e018";
+}
+.vertec-home:before {
+	content: "\e019";
+}
+.vertec-google:before {
+	content: "\e01a";
+}
+.vertec-globe:before {
+	content: "\e01b";
+}
+.vertec-flicker:before {
+	content: "\e01c";
+}
+.vertec-face:before {
+	content: "\e01d";
+}
+.vertec-envelope:before {
+	content: "\e01e";
+}
+.vertec-dribble:before {
+	content: "\e01f";
+}
+.vertec-directionn:before {
+	content: "\e020";
+}
+.vertec-direction:before {
+	content: "\e021";
+}
+.vertec-digg2:before {
+	content: "\e022";
+}
+.vertec-digg:before {
+	content: "\e023";
+}
+.vertec-date:before {
+	content: "\e024";
+}
+.vertec-comments:before {
+	content: "\e025";
+}
+.vertec-clock2:before {
+	content: "\e026";
+}
+.vertec-clock:before {
+	content: "\e027";
+}
+.vertec-brain:before {
+	content: "\e028";
+}
+.vertec-blog:before {
+	content: "\e029";
+}
+.vertec-youtube:before {
+	content: "\e02a";
+}
+.vertec-yahoo:before {
+	content: "\e02b";
+}
+.vertec-wordpress:before {
+	content: "\e02c";
+}
+.vertec-vine:before {
+	content: "\e02d";
+}
+.vertec-video:before {
+	content: "\e02e";
+}
+.vertec-tweet:before {
+	content: "\e02f";
+}
+.vertec-truck:before {
+	content: "\e030";
+}
+.vertec-tick:before {
+	content: "\e031";
+}
+.vertec-telephone:before {
+	content: "\e032";
+}
+.vertec-stumbleupon:before {
+	content: "\e033";
+}
+.vertec-social-whale:before {
+	content: "\e034";
+}
+.vertec-socialman:before {
+	content: "\e035";
+}
+.vertec-social2:before {
+	content: "\e036";
+}
+.vertec-skype:before {
+	content: "\e037";
+}
+.vertec-sign:before {
+	content: "\e038";
+}
+.vertec-shortcodes:before {
+	content: "\e039";
+}
