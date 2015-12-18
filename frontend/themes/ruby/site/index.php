@@ -217,7 +217,17 @@ $this->title = 'Ninja CTO';
         </div>
     </div>
     <div class="col-md-4">
-        <a class="twitter-timeline" href="https://twitter.com/ninjacto" data-widget-id="677700415312502785">Tweets by @ninjacto</a>
+        <h3>TWITTER</h3>
+
+        <div class="popular-post-widget">
+            <a class="twitter-timeline" href="https://twitter.com/ninjacto" data-widget-id="677700415312502785"
+               data-chrome="noheader noborders transparent nofooter">
+                Tweets by @ninjacto
+            </a>
+
+        </div>
+    </div>
+    <div class="col-md-4">
     </div>
 </div>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
