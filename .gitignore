@@ -30,5 +30,4 @@ phpunit.phar
 /phpunit.xml
 
 # themes dir
-/theme
 /data
