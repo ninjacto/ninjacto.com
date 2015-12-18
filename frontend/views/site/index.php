@@ -18,6 +18,9 @@ $this->title = 'My Yii Application';
 
         <div class="row">
             <div class="col-lg-4">
+                <a class="twitter-timeline" href="https://twitter.com/ninjacto" data-widget-id="677700415312502785">Tweets by @ninjacto</a>
+            </div>
+            <div class="col-lg-4">
                 <h2>Heading</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -51,3 +54,5 @@ $this->title = 'My Yii Application';
 
     </div>
 </div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+

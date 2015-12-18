@@ -13,11 +13,30 @@
         "source": "https://github.com/yiisoft/yii2"
     },
     "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "yiisoft/yii2-imagine": "*",
+        "yiisoft/yii2-redis": "*",
+        "yiisoft/yii2-authclient": "*",
+        "algolia/algoliasearch-client-php": "^1.6",
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "ps/image-optimizer": "*",
+        "cocur/slugify": "*",
+        "nesbot/carbon": "*",
+        "cboden/ratchet": "^0.3.3",
+        "facebook/php-sdk-v4" : "~5.0",
+        "kartik-v/yii2-widgets": "*",
+        "kartik-v/yii2-slider": "*",
+        "kartik-v/yii2-label-inplace": "*",
+        "kartik-v/yii2-editable": "*",
+        "kartik-v/yii2-sortable": "*",
+        "kartik-v/yii2-widget-fileinput": "^1.0",
+        "bower-asset/fontawesome": "*",
+        "justinvoelker/yii2-tagging": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
@@ -32,6 +51,19 @@
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
-        }
+        },
+        "bootstrap": "yii\\jui\\Extension",
+        "writable": [
+            "runtime",
+            "web/assets"
+        ],
+        "executable": [
+            "yii"
+        ]
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::setPermission"
+        ]
     }
 }
