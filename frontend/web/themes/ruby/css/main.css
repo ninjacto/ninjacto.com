@@ -442,13 +442,14 @@ color: #8c8c8c;
 .rowtitle {border-bottom: 4px double #dddddd;display: block;padding-bottom: 12px;}
 .bg-color{margin-bottom:55px;}
 .column-border .col-md-6{border-right: 1px solid #ddd;}
+.column-border .col-md-6.no-border{border-right: none;}
 .vertec-list-content i{color: #fff;background: #e54242;border-radius: 100%;width: 25px;height: 25px;text-align: center;padding-top: 6px;margin-right: 10px;}
 .vertec-list-content p{font-size: 16px;font-family: arial;}
 
 /***********************/
 /*    Blog Content     */
 /***********************/ 
-.blogPage { padding: 40px 30px 0 20px;}
+.blogPage { padding: 15px 15px 0 15px;}
 .shareit .social-box {
     background: #fff;
     font-size: 16px;

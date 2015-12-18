@@ -11,6 +11,15 @@ use yii\captcha\Captcha;
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="bg-map">
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12 animated fadeInDown">
+                <img src="/uploads/contact.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 <div class="site-contact">
     <div class="row">
         <div class="container">
@@ -77,22 +86,30 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-4 animated fadeInRight">
                 <h3 class="subTitle-contact">CONTACT <span>INFO</span></h3>
                 <div class="contact-info">
-                    <p><i class="vertec-telephone"></i> (+09) 0323 750 4561</p>
+                    <p><i class="vertec-telephone"></i> (+000) 0000 000 0000</p>
                     <p><i class="vertec-envelope"></i> info@ninjacto.com</p>
                     <p><i class="vertec-globe"></i> ninjacto.com</p>
-                    <p><i class="vertec-clock2"></i> Mon - Sat 9:00am - 6:00pm</p>
-                    <p><i class="vertec-direction"></i> Envato Marketplace Melbourne ST</p>
+                    <p><i class="vertec-clock2"></i> Mon - Sat 9:00am - 6:00pm (UTC)</p>
+                    <p><i class="vertec-direction"></i> xxx xxxxx xxx ST</p>
                 </div>
                 <div class="contact-icons">
-                    <a href="#"><div class="social-box"><i class="fa fa-facebook"></i></div></a>
+                    <a href="https://www.facebook.com/ramin.farmani"><div class="social-box"><i class="fa fa-facebook"></i></div></a>
                     <a href="https://twitter.com/ninjacto"><div class="social-box"><i class="fa fa-twitter"></i></div></a>
-                    <a href="#"><div class="social-box"><i class="fa fa-dribbble"></i></div></a>
-                    <a href="#"><div class="social-box"><i class="fa fa-google-plus"></i></div></a>
+                    <a href="https://plus.google.com/+RaminFarmani"><div class="social-box"><i class="fa fa-google-plus"></i></div></a>
                     <a href="#"><div class="social-box"><i class="fa fa-foursquare"></i></div></a>
                     <a href="skype://ramin.farmani"><div class="social-box"><i class="fa fa-skype"></i></div></a>
-                    <a href="#"><div class="social-box"><i class="fa fa-linkedin"></i></div></a>
+                    <a href="https://ir.linkedin.com/in/ramin-farmani-2086b314"><div class="social-box"><i class="fa fa-linkedin"></i></div></a>
                 </div>
 
+            </div>
+        </div>
+    </div>
+    <div class="copyright-section">
+        <div class="row">
+            <div class="container">
+                <div class="col-md-12">
+                    <p>Copyright © 2015 Ninja CTO. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </div>

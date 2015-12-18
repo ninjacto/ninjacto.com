@@ -22,7 +22,7 @@ RubyAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body class="blog">
     <div id="qLoverlay"><div class="loadLogo"><img class="spinner" src="<?= $this->theme->getUrl('img/logo.png')?>"></div></div>
     <?php $this->beginBody() ?>
     <div id="vertec-layout">
@@ -131,7 +131,7 @@ RubyAsset::register($this);
                                     <?= yii\helpers\Html::a('CONTACT',['site/contact']);?>
                                 </li>
                                 <li>
-                                    <?= yii\helpers\Html::a('HIRE ME!',['site/contact']);?>
+                                    <?= yii\helpers\Html::a('HIRE / DONATE ME!',['site/contact']);?>
                                 </li>
                             </ul>
                         </div><!-- /dl-menuwrapper -->
@@ -148,8 +148,6 @@ RubyAsset::register($this);
                         <h3>WE ARE SOCIAL</h3>
                         <div class="navigation-social-icons"><a href="#"><i class="vertec-face"></i></a><p>FB FANS</p></div>
                         <div class="navigation-social-icons"><a href="https://twitter.com/ninjacto"><i class="vertec-tweet"></i></a><p>FOLLOWERS</p></div>
-                        <div class="navigation-social-icons"><a href="#"><i class="vertec-youtube"></i></a><p>Screencasts</p></div>
-                        <div class="navigation-social-icons"><a href="https://twitter.com/ninjacto"><i class="vertec-tweet"></i></a><p>FOLLOWERS</p></div>
                         <div class="navigation-social-icons"><a href="/sitemap"><i class="vertec-rss"></i></a><p>RSS FEED</p></div>
                     </div>
                     <div class="navigation-copyright">
@@ -159,9 +157,10 @@ RubyAsset::register($this);
 
                 </aside>
             </div>
-            <section class="mainContent">
+            <section class="mainContent blogPage">
                 <?= Alert::widget() ?>
                 <?= $content ?>
+
             </section>
         </div>
     </div>
