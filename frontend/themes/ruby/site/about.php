@@ -65,30 +65,24 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="column-border">
                     <div class="col-md-6 animated fadeInLeft">
                         <h3 class="subTitle">Ninja CTO <span>STORY</span></h3>
-                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting,
-                            remaining essentially unchanged. It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Aldus PageMaker including versions It uses a dictionary of
-                            over Power.</p>
+                        <p></p>
                         <img src="/uploads/comic.jpg">
                     </div>
                     <div class="col-md-6 animated fadeInRight no-border">
                         <h3 class="subTitle">THINGS <span>I CAN DO</span></h3>
-                        <p>It has survived not only five centuries, but also the leap into electronic typesetting,
-                            remaining essentially unchanged. It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Aldus PageMaker including versions It uses a dictionary of
-                            over Power.</p>
+                        <p>LAMP & LEMP Developer (+15 years): more than 15 years activity in using LEMP/LAMP stack has made me a solid developer in this area. I’m quite good at *unix (debian based) servers.</p>
                         <div class="vertec-list-content">
-                            <p><i class="fa fa-check"></i> I’ve grown up with PHP :) and during the past 15 years I've had a lot of fun with it. I’ve been using Yii Framework since 2009 and I love it!</p>
-                            <p><i class="fa fa-check"></i> Since 2010 I've switched all my servers to Nginx and during these years I've learned how to tweak a Linux (Debian based) OS and Nginx configuration to have a highly reliable, tuned and hardened web server for different applications and purposes.</p>
-                            <p><i class="fa fa-check"></i> MySQL is my main choice over all other RDBMS. Although tweaking innodb configuration on the latest Percona build of MySQL help me to use the highest possible power of this great database but I know the limits as well and usually combine it with a Redis to build up a trustworthy fast DB storage. Redis is also usually my main choice for cache/session storage and I almost use it in every project that I have been developed during past 4 years.</p>
-                            <p><i class="fa fa-check"></i> Amazon Web Services (AWS) is my favorite cloud service and I use their services almost every day. I know EC2, Elastic Beanstalk, S3, CloudFront, EBS, RDS, DynamoDB, ElastiCache, Route 53, Identity & Access Management, SNS, SQS and AWS SDK for PHP.</p>
-                            <p><i class="fa fa-check"></i> RabbitMQ and ZeroMQ play the main role in the queue/worker tasks.</p>
-                            <p><i class="fa fa-check"></i> REST API is the thing that I've been working on for the past 3 years in Thank You Menu, Inc. We develop a fast and reliable RESTful API for our web/mobile apps.</p>
-                            <p><i class="fa fa-check"></i> Node.js is my alternative when I need something lighter and faster to work with as a back-end environment I try to use it as less as possible because I don’t like Javascript too much :-/ but sometimes it was the solution and I’m really happy with it’s results.</p>
-                            <p><i class="fa fa-check"></i> Sometime I use backbone.js, handlebars.js, require.js, and most of the time  jQuery for some front-end tasks and HTML/CSS are also used in some moments in my day to day life.</p>
-                            <p><i class="fa fa-check"></i> Parse.com has been a part of my life for the past 2 years. I’ve developed 3 different applications with it and know their JS SDK, PHP SDK and back-end semi-node environments as well.</p>
+                            <ol>
+                                <li>I’ve grown up with <span>PHP</span> :) and during the past 15 years I've had a lot of fun with it. I’ve been using <span>Yii Framework</span> since 2009 and I love it!</li>
+                                <li>Since 2010 I've switched all my servers to <span>Nginx</span> and during these years I've learned how to tweak a Linux (<span>Debian</span> based) OS and Nginx configuration to have a highly reliable, tuned and hardened web server for different applications and purposes.</li>
+                                <li><span>MySQL</span> is my main choice over all other <span>RDBMS</span>. Although tweaking innodb configuration on the latest <span>Percona</span> build of MySQL help me to use the highest possible power of this great database but I know the limits as well and usually combine it with a <span>Redis</span> to build up a trustworthy fast DB storage. Redis is also usually my main choice for cache/session storage and I almost use it in every project that I have been developed during past 4 years.</li>
+                                <li><span>Amazon Web Services (AWS)</span> is my favorite cloud service and I use their services almost every day. I know <span>EC2</span>, <span>Elastic Beanstalk</span>, <span>S3</span>, <span>CloudFront</span>, <span>EBS</span>, <span>RDS</span>, <span>DynamoDB</span>, <span>ElastiCache</span>, <span>Route 53</span>, <span>Identity & Access Management</span>, <span>SNS</span>, <span>SQS</span> and <span>AWS SDK for PHP</span>.</li>
+                                <li><span>RabbitMQ</span> and ZeroMQ</span> play the main role in the queue/worker tasks.</li>
+                                <li><span>REST API</span> is the thing that I've been working on for the past 3 years in <span>Thank You Menu, Inc</span>. We develop a fast and reliable RESTful API for our web/mobile apps.</li>
+                                <li><span>Node.js</span> is my alternative when I need something lighter and faster to work with as a back-end environment I try to use it as less as possible because I don’t like <span>Javascript</span> too much :-/ but sometimes it was the solution and I’m really happy with it’s results.</li>
+                                <li>Sometime I use <span>backbone.js</span>, <span>handlebars.js</span>, <span>require.js<s/pan>, and most of the time  <span>jQuery</span> for some front-end tasks and <span>HTML/CSS</span> are also used in some moments in my day to day life.</li>
+                                <li><span>Parse.com</span> has been a part of my life for the past 2 years. I’ve developed 3 different applications with it and know their JS SDK, PHP SDK and back-end semi-node environments as well.</li>
+                            </ol>
                         </div>
                         <h3 class="rowtitle">WHO <span>I</span> AM</h3>
                         <div class="panel-group" id="accordion">
