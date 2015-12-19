@@ -49,77 +49,7 @@ RubyAsset::register($this);
                             <button class="dl-trigger">Open Menu</button>
                             <ul class="dl-menu dl-menuopen">
                                 <li>
-                                    <a href="#">Blog</a>
-                                    <ul class="dl-submenu">
-                                        <li>
-                                            <a href="#">Server</a>
-                                            <ul class="dl-submenu">
-                                                <li>
-                                                    <a href="#">Linux</a>
-                                                    <ul class="dl-submenu">
-                                                        <li><a href="#">Debian Based</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Server</a>
-                                                    <ul class="dl-submenu">
-                                                        <li><a href="#">Nginx</a></li>
-                                                        <li><a href="#">Apache</a></li>
-                                                        <li><a href="#">HAProxy</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Cloud</a>
-                                                    <ul class="dl-submenu">
-                                                        <li><a href="#">AWS</a></li>
-                                                        <li><a href="#">Parse.com</a></li>
-                                                        <li><a href="#">algolia</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Database</a>
-                                                    <ul class="dl-submenu">
-                                                        <li><a href="#">MySQL</a></li>
-                                                        <li><a href="#">Percona</a></li>
-                                                        <li><a href="#">MongoDB</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Cache</a>
-                                                    <ul class="dl-submenu">
-                                                        <li><a href="#">Redis</a></li>
-                                                        <li><a href="#">Memcached</a></li>
-                                                        <li><a href="#">OpCache</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Queue/Message</a>
-                                                    <ul class="dl-submenu">
-                                                        <li><a href="#">RabbitMQ</a></li>
-                                                        <li><a href="#">ZeroMQ</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Backend Development</a>
-                                            <ul class="dl-submenu">
-                                                <li><a href="#">PHP</a></li>
-                                                <li><a href="#">Yii Framework</a></li>
-                                                <li><a href="#">Node.js</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Frontned Development</a>
-                                            <ul class="dl-submenu">
-                                                <li><a href="#">UX/UI</a></li>
-                                                <li><a href="#">Angular.js</a></li>
-                                                <li><a href="#">Backbone.js</a></li>
-                                                <li><a href="#">Require.js</a></li>
-                                                <li><a href="#">handlebars.js</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <?= yii\helpers\Html::a('Blog',['blog/index']);?>
                                 </li>
                                 <li>
                                     <?= yii\helpers\Html::a('ABOUT ME',['site/about']);?>

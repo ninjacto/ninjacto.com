@@ -61,7 +61,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'error' => 'col-sm-10',
                                 'hint' => 'col-sm-10',
                             ],
-                        ])->textArea(['rows' => 6]) ?>
+                        ])->widget(\yii\redactor\widgets\Redactor::className(), [
+                            'clientOptions' => [
+                                'buttons' => ['format', 'bold', 'italic', 'deleted',
+                                    'lists', 'image', 'file', 'link', 'horizontalrule'],
+                                'plugins' => ['textdirection']
+                            ]
+                        ])?>
 
                         <?= $form->field($model, 'verifyCode',[
                             'horizontalCssClasses' => [
@@ -96,7 +102,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <a href="https://www.facebook.com/ramin.farmani"><div class="social-box"><i class="fa fa-facebook"></i></div></a>
                     <a href="https://twitter.com/ninjacto"><div class="social-box"><i class="fa fa-twitter"></i></div></a>
                     <a href="https://plus.google.com/+RaminFarmani"><div class="social-box"><i class="fa fa-google-plus"></i></div></a>
-                    <a href="#"><div class="social-box"><i class="fa fa-foursquare"></i></div></a>
+                    <a href="https://foursquare.com/raminfarmani"><div class="social-box"><i class="fa fa-foursquare"></i></div></a>
                     <a href="skype://ramin.farmani"><div class="social-box"><i class="fa fa-skype"></i></div></a>
                     <a href="https://ir.linkedin.com/in/ramin-farmani-2086b314"><div class="social-box"><i class="fa fa-linkedin"></i></div></a>
                 </div>

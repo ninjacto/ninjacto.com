@@ -12,6 +12,9 @@ height: auto;
 body{
     font-size: 16px;
 }
+pre {
+    background-color: #2d2d2d!important;
+}
 .icon-4x{font-size: 50px;}
 .icon-5x {font-size: 5em;}
 .icon-6x{font-size: 20px;}

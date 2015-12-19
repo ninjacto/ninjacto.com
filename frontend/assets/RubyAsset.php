@@ -22,10 +22,12 @@ class RubyAsset extends AssetBundle
         'css/font-awesome.min.css',
         'css/animate.min.css',
         'css/menu.css',
+        'css/github-gist.css',
         'css/icons.css',
         'css/main.css',
         'css/flexslider.css',
         'css/prettyPhoto.css',
+        'css/darkula.css',
     ];
     public $js = [
         'js/jquery-ui.js',
@@ -40,6 +42,7 @@ class RubyAsset extends AssetBundle
         'js/jquery.prettyPhoto.js',
         'js/jquery.queryloader2.js',
         'js/masonry.pkgd.min.js',
+        'js/highlight.pack.js',
         'js/main.js',
     ];
     public $depends = [

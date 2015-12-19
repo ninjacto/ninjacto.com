@@ -1,7 +1,7 @@
 // Nice Scroll
 jQuery("html").niceScroll({cursorborder: "", cursorcolor: "#e54242", cursorwidth: "7px", cursorborderradius: "0px"});
 jQuery(".header").niceScroll({cursorborder: "", cursorcolor: "#c73b3b", cursorwidth: "7px", cursorborderradius: "0px"});
-
+hljs.initHighlightingOnLoad();
 // Loader
 // ======================
 jQuery("body").queryLoader2({

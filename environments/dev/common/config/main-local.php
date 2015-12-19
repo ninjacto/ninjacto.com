@@ -1,9 +1,15 @@
 <?php
 return [
+    'aliases' => [
+        '@frontend' => dirname(dirname(__DIR__)) . '/frontend',
+        '@frontendUrl' => 'http://ninjacto.dev',
+        '@backend' => dirname(dirname(__DIR__)) . '/backend',
+        '@backendUrl' => 'http://admin5411.ninjacto.dev',
+    ],
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2advanced',
+            'dsn' => 'mysql:host=localhost;dbname=ninjacto',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
