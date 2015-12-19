@@ -80,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <li><span>RabbitMQ</span> and ZeroMQ</span> play the main role in the queue/worker tasks.</li>
                                 <li><span>REST API</span> is the thing that I've been working on for the past 3 years in <span>Thank You Menu, Inc</span>. We develop a fast and reliable RESTful API for our web/mobile apps.</li>
                                 <li><span>Node.js</span> is my alternative when I need something lighter and faster to work with as a back-end environment I try to use it as less as possible because I don’t like <span>Javascript</span> too much :-/ but sometimes it was the solution and I’m really happy with it’s results.</li>
-                                <li>Sometime I use <span>backbone.js</span>, <span>handlebars.js</span>, <span>require.js<s/pan>, and most of the time  <span>jQuery</span> for some front-end tasks and <span>HTML/CSS</span> are also used in some moments in my day to day life.</li>
+                                <li>Sometime I use <span>backbone.js</span>, <span>handlebars.js</span>, <span>require.js</span>, and most of the time <span>jQuery</span> for some front-end tasks and <span>HTML/CSS</span> are also used in some moments in my day to day life.</li>
                                 <li><span>Parse.com</span> has been a part of my life for the past 2 years. I’ve developed 3 different applications with it and know their JS SDK, PHP SDK and back-end semi-node environments as well.</li>
                             </ol>
                         </div>
