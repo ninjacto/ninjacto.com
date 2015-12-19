@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use common\models\Post;
 use common\models\PostSearch;
 use yii\helpers\VarDumper;
@@ -15,9 +16,22 @@ use yii\filters\VerbFilter;
  */
 class PostController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

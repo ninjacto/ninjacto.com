@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use common\models\Category;
 use common\models\CategorySearch;
 use yii\web\Controller;
@@ -14,9 +15,22 @@ use yii\filters\VerbFilter;
  */
 class CategoryController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
