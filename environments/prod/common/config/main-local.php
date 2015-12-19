@@ -10,8 +10,8 @@ return [
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=ninjacto',
-            'username' => 'root',
-            'password' => 'AsXc3142##*^',
+            'username' => 'ninjacto',
+            'password' => 'QF#$LMgfS34#!fxS*gh_3',
             'charset' => 'utf8',
         ],
         'mailer' => [
