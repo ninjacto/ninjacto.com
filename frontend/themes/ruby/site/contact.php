@@ -82,7 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]) ?>
 
                         <div class="form-group">
-                            <?= Html::submitButton('Submit', ['class' => 'btn btn-danger pull-right', 'name' => 'contact-button']) ?>
+                            <?= Html::submitButton('Submit', ['class' => 'buton b_asset buton-2 buton-mini pull-right', 'name' => 'contact-button']) ?>
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <p><i class="vertec-telephone"></i> (+000) 0000 000 0000</p>
                     <p><i class="vertec-envelope"></i> info@ninjacto.com</p>
                     <p><i class="vertec-globe"></i> ninjacto.com</p>
-                    <p><i class="vertec-clock2"></i> Mon - Sat 9:00am - 6:00pm (UTC)</p>
+                    <p><i class="vertec-clock2"></i> Mon - Sat 9:00am - 6:00pm</p>
                     <p><i class="vertec-direction"></i> xxx xxxxx xxx ST</p>
                 </div>
                 <div class="contact-icons">

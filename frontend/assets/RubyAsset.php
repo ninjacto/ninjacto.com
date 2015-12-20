@@ -22,7 +22,6 @@ class RubyAsset extends AssetBundle
         'css/font-awesome.min.css',
         'css/animate.min.css',
         'css/menu.css',
-        'css/github-gist.css',
         'css/icons.css',
         'css/main.css',
         'css/flexslider.css',

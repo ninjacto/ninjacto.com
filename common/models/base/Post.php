@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property integer $user_id
+ * @property integer $poster_id
  * @property string $title
  * @property string $body
  * @property integer $is_lts
@@ -22,10 +23,10 @@ use Yii;
  * @property CategoryHasPost[] $categoryHasPosts
  * @property Category[] $categories
  * @property Comment[] $comments
+ * @property Poster $poster
  * @property User $user
  * @property PostHasTag[] $postHasTags
  * @property Tag[] $tags
- * @property Poster[] $posters
  * @property SeriesHasPost[] $seriesHasPosts
  * @property Series[] $series
  */
@@ -45,8 +46,8 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'title', 'body'], 'required'],
-            [['user_id', 'is_lts'], 'integer'],
+            [['user_id', 'poster_id', 'title', 'body'], 'required'],
+            [['user_id', 'poster_id', 'is_lts'], 'integer'],
             [['body'], 'string'],
             [['published_at', 'indexed_at', 'created_at', 'updated_at'], 'safe'],
             [['title', 'keyword'], 'string', 'max' => 255],
@@ -62,6 +63,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
+            'poster_id' => 'Poster ID',
             'title' => 'Title',
             'body' => 'Body',
             'is_lts' => 'Is Lts',
@@ -101,6 +103,14 @@ class Post extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getPoster()
+    {
+        return $this->hasOne(Poster::className(), ['id' => 'poster_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
@@ -120,14 +130,6 @@ class Post extends \yii\db\ActiveRecord
     public function getTags()
     {
         return $this->hasMany(Tag::className(), ['id' => 'tag_id'])->viaTable('post_has_tag', ['post_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPosters()
-    {
-        return $this->hasMany(Poster::className(), ['post_id' => 'id']);
     }
 
     /**

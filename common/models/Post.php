@@ -2,10 +2,13 @@
 namespace common\models;
 
 use creocoder\taggable\TaggableBehavior;
+use yii\behaviors\SluggableBehavior;
 use common\models\base\Post as PostBase;
 
 class Post extends PostBase
 {
+    public $tagValues;
+
     public function behaviors()
     {
         return [
@@ -15,6 +18,11 @@ class Post extends PostBase
                 'tagRelation' => 'tags',
                 'tagValueAttribute' => 'title',
                 'tagFrequencyAttribute' => 'frequency',
+            ],
+            [
+                'class' => SluggableBehavior::className(),
+                'attribute' => 'title',
+                'slugAttribute' => 'slug',
             ],
         ];
     }

@@ -55,9 +55,6 @@ RubyAsset::register($this);
                                     <?= yii\helpers\Html::a('ABOUT ME',['site/about']);?>
                                 </li>
                                 <li>
-                                    <?= yii\helpers\Html::a('PORTFOLIO',['site/portfolio']);?>
-                                </li>
-                                <li>
                                     <?= yii\helpers\Html::a('CONTACT',['site/contact']);?>
                                 </li>
                                 <li>

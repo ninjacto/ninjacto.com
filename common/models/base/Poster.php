@@ -8,14 +8,13 @@ use Yii;
  * This is the model class for table "poster".
  *
  * @property integer $id
- * @property integer $post_id
  * @property string $filename
  * @property string $filesize
  * @property string $mime
  * @property string $created_at
  * @property string $updated_at
  *
- * @property Post $post
+ * @property Post[] $posts
  */
 class Poster extends \yii\db\ActiveRecord
 {
@@ -33,8 +32,7 @@ class Poster extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['post_id', 'filename', 'filesize'], 'required'],
-            [['post_id'], 'integer'],
+            [['filename', 'filesize'], 'required'],
             [['created_at', 'updated_at'], 'safe'],
             [['filename', 'filesize', 'mime'], 'string', 'max' => 255]
         ];
@@ -47,7 +45,6 @@ class Poster extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'post_id' => 'Post ID',
             'filename' => 'Filename',
             'filesize' => 'Filesize',
             'mime' => 'Mime',
@@ -59,9 +56,9 @@ class Poster extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPost()
+    public function getPosts()
     {
-        return $this->hasOne(Post::className(), ['id' => 'post_id']);
+        return $this->hasMany(Post::className(), ['poster_id' => 'id']);
     }
 
     /**
