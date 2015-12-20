@@ -6,6 +6,7 @@ use kartik\daterange\DateRangePicker;
 use dosamigos\switchinput\SwitchBox;
 use dosamigos\selectize\SelectizeTextInput;
 use kartik\markdown\MarkdownEditor;
+use kartik\widgets\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Post */
@@ -25,6 +26,15 @@ use kartik\markdown\MarkdownEditor;
                 'error' => 'col-sm-10',
                 'hint' => 'col-sm-10',
             ],
+        ],
+    ]); ?>
+
+    <?= $form->field($model, 'categories')->widget(Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\Category::find()->where(['is not','parent_id',null])->select(['id','title'])->asArray()->all(), 'id', 'title'),
+        'options' => ['placeholder' => 'Categories', 'multiple' => true],
+        'pluginOptions' => [
+            'tags' => true,
+            'allowClear' => true
         ],
     ]); ?>
 

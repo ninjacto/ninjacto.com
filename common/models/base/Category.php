@@ -8,10 +8,13 @@ use Yii;
  * This is the model class for table "category".
  *
  * @property integer $id
+ * @property integer $parent_id
  * @property string $title
  * @property string $created_at
  * @property string $updated_at
  *
+ * @property Category $parent
+ * @property Category[] $categories
  * @property CategoryHasPost[] $categoryHasPosts
  * @property Post[] $posts
  */
@@ -31,6 +34,7 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['parent_id'], 'integer'],
             [['title'], 'required'],
             [['created_at', 'updated_at'], 'safe'],
             [['title'], 'string', 'max' => 255]
@@ -44,10 +48,27 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'parent_id' => 'Parent ID',
             'title' => 'Title',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getParent()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'parent_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategories()
+    {
+        return $this->hasMany(Category::className(), ['parent_id' => 'id']);
     }
 
     /**

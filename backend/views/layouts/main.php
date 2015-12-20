@@ -38,7 +38,6 @@ AppAsset::register($this);
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Posts', 'url' => ['/post/index']],
         ['label' => 'Categories', 'url' => ['/category/index']],
-        ['label' => 'Series', 'url' => ['/series/index']],
         ['label' => 'Comments', 'url' => ['/comment/index']],
     ];
     if (Yii::$app->user->isGuest) {

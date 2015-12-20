@@ -29,6 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            [
+                'label'=>'Parent',
+                'value'=>empty($model->parent->title)?'':$model->parent->title,
+            ],
             'title',
             'created_at',
             'updated_at',
