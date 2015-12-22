@@ -27,9 +27,11 @@ use kartik\widgets\Select2;
                 'hint' => 'col-sm-10',
             ],
         ],
+        'options' => ['enctype' => 'multipart/form-data'],
     ]); ?>
 
     <?= $form->field($model, 'categories')->widget(Select2::classname(), [
+        'value' => $model->isNewRecord ? [] : \common\models\Category::find()->select(['category.id'])->joinWith('posts')->where(['post.id'=>$model->id])->asArray()->all(), // initial value
         'data' => \yii\helpers\ArrayHelper::map(\common\models\Category::find()->where(['is not','parent_id',null])->select(['id','title'])->asArray()->all(), 'id', 'title'),
         'options' => ['placeholder' => 'Categories', 'multiple' => true],
         'pluginOptions' => [
@@ -37,6 +39,8 @@ use kartik\widgets\Select2;
             'allowClear' => true
         ],
     ]); ?>
+
+    <?= $form->field($model, 'poster')->fileInput() ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 

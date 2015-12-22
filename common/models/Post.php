@@ -33,11 +33,12 @@ class Post extends PostBase
     public function rules()
     {
         return [
-            [['user_id', 'title', 'body'], 'required'],
+            [['user_id', 'title', 'body', 'slug'], 'required'],
             [['user_id', 'is_lts'], 'integer'],
             [['body'], 'string'],
             [['published_at', 'indexed_at', 'created_at', 'updated_at'], 'safe'],
-            [['title', 'keyword'], 'string', 'max' => 255],
+            [['title', 'slug', 'keyword'], 'string', 'max' => 255],
+            [['poster'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'on' => ['create']],
             [['description'], 'string', 'max' => 160],
             [['tagValues'], 'safe'],
         ];
@@ -48,6 +49,28 @@ class Post extends PostBase
         return [
             self::SCENARIO_DEFAULT => self::OP_ALL,
         ];
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            if(file_exists(\Yii::getAlias('@frontend/web/uploads/posters/') . $this->id . '.' . $this->poster->extension))
+                unlink(\Yii::getAlias('@frontend/web/uploads/posters/') . $this->id . '.' . $this->poster->extension);
+            $this->poster->saveAs(\Yii::getAlias('@frontend/web/uploads/posters/') . $this->id . '.' . $this->poster->extension);
+            $this->poster = $this->id . '.' . $this->poster->extension;
+            $this->save(false);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getCategoriesName()
+    {
+        $names = [];
+        foreach($this->categories as $category)
+            $names[] = $category->title;
+        return $names;
     }
 
     public static function find()

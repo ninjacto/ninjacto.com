@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Category;
 use Yii;
 use yii\filters\AccessControl;
 use common\models\Post;
@@ -26,7 +27,7 @@ class PostController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'view', 'create', 'update'],
+                        'actions' => ['index', 'view', 'delete', 'create', 'update'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -77,13 +78,23 @@ class PostController extends Controller
     {
         $model = new Post();
         $model->user_id = Yii::$app->user->id;
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $postData = Yii::$app->request->post('Post');
+            if(!empty($postData['categories'])) {
+                foreach($postData['categories'] as $categoryId) {
+                    $category = Category::find()->where(['id'=>$categoryId])->one();
+                    $model->link('categories', $category);
+                }
+            }
+            $model->setScenario('create');
+            $model->poster = \yii\web\UploadedFile::getInstance($model, 'poster');
+            if ($model->save() && $model->upload()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -95,13 +106,39 @@ class PostController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $postData = Yii::$app->request->post('Post');
+            if(!empty($postData['categories'])) {
+                $categories = \common\models\Category::find()->select(['category.id'])->joinWith('posts')->where(['post.id'=>$model->id])->asArray()->all();
+                foreach($categories as $oldCategory) {
+                    foreach($postData['categories'] as $key=>$categoryId) {
+                        if($oldCategory['id'] == $categoryId)
+                            unset($postData['categories'][$key]);
+                    }
+                }
+
+                foreach($postData['categories'] as $categoryId) {
+                    $category = Category::find()->where(['id'=>$categoryId])->one();
+                    $model->link('categories', $category);
+                }
+            }
+            if ($model->save()) {
+                $model->poster = \yii\web\UploadedFile::getInstance($model, 'poster');
+                $changes = $model->getDirtyAttributes(['poster']);
+                if(!empty($changes['poster'])) {
+                    if ($model->upload()) {
+                        return $this->redirect(['view', 'id' => $model->id]);
+                    } else {
+                        $model->addError('poster','Could Not upload poster!');
+                    }
+                } else {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            }
         }
+        return $this->render('update', [
+            'model' => $model,
+        ]);
     }
 
     /**

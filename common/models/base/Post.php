@@ -9,9 +9,10 @@ use Yii;
  *
  * @property integer $id
  * @property integer $user_id
- * @property integer $poster_id
+ * @property string $poster
  * @property string $title
  * @property string $body
+ * @property string $slug
  * @property integer $is_lts
  * @property string $keyword
  * @property string $description
@@ -23,7 +24,6 @@ use Yii;
  * @property CategoryHasPost[] $categoryHasPosts
  * @property Category[] $categories
  * @property Comment[] $comments
- * @property Poster $poster
  * @property User $user
  * @property PostHasTag[] $postHasTags
  * @property Tag[] $tags
@@ -46,11 +46,11 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'poster_id', 'title', 'body'], 'required'],
-            [['user_id', 'poster_id', 'is_lts'], 'integer'],
+            [['user_id', 'title', 'body', 'slug'], 'required'],
+            [['user_id', 'is_lts'], 'integer'],
             [['body'], 'string'],
             [['published_at', 'indexed_at', 'created_at', 'updated_at'], 'safe'],
-            [['title', 'keyword'], 'string', 'max' => 255],
+            [['poster', 'title', 'slug', 'keyword'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 160]
         ];
     }
@@ -63,9 +63,10 @@ class Post extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'poster_id' => 'Poster ID',
+            'poster' => 'Poster',
             'title' => 'Title',
             'body' => 'Body',
+            'slug' => 'Slug',
             'is_lts' => 'Is Lts',
             'keyword' => 'Keyword',
             'description' => 'Description',
@@ -98,14 +99,6 @@ class Post extends \yii\db\ActiveRecord
     public function getComments()
     {
         return $this->hasMany(Comment::className(), ['post_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPoster()
-    {
-        return $this->hasOne(Poster::className(), ['id' => 'poster_id']);
     }
 
     /**

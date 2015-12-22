@@ -29,14 +29,27 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'user_id',
+            'user.name',
+            [
+                'label'=>'categories',
+                'attribute'=>'categories.title',
+                'value'=>implode(', ', $model->getCategoriesName())
+            ],
             'title',
+            [
+                'attribute'=>'poster',
+                'value'=>\Yii::getAlias('@frontendUrl/uploads/posters/').$model->poster,
+                'format' => ['image',['width'=>'100%']],
+            ],
             [                      // the owner name of the model
                 'label' => 'body',
                 'value' => kartik\markdown\Markdown::convert($model->body),
                 'format' => 'html'
             ],
-            'is_lts',
+            [                      // the owner name of the model
+                'label' => 'LTS',
+                'value' => $model->is_lts?"Yes":"No",
+            ],
             'keyword',
             'description',
             'published_at:datetime',

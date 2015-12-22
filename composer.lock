@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "919dce5b20c9249de94b1f503bf4a638",
-    "content-hash": "cd772e0910f99d354c5c3b53db1d2d17",
+    "hash": "0c252730de57e34676df8e5b85b75440",
+    "content-hash": "08e083a85789e8601601d9ae84029bf9",
     "packages": [
         {
             "name": "2amigos/yii2-disqus-widget",
@@ -1200,36 +1200,30 @@
         },
         {
             "name": "facebook/php-sdk-v4",
-            "version": "5.1.2",
+            "version": "4.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
-                "reference": "2c42fb3002953355f12d3c6e8003a9fd5af563d9"
+                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/2c42fb3002953355f12d3c6e8003a9fd5af563d9",
-                "reference": "2c42fb3002953355f12d3c6e8003a9fd5af563d9",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/c82611e05596622c9bd7abfa1cea1512d885c95e",
+                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e",
                 "shasum": ""
             },
             "require": {
-                "ext-mbstring": "*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "guzzlehttp/guzzle": "~5.0",
-                "mockery/mockery": "~0.8",
-                "phpunit/phpunit": "~4.0"
+                "guzzlehttp/guzzle": "~4.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "3.7.*"
             },
             "suggest": {
                 "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Facebook\\": "src/Facebook/"
@@ -1251,7 +1245,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2015-11-19 21:07:36"
+            "time": "2015-04-03 20:31:47"
         },
         {
             "name": "guzzle/common",
@@ -2152,21 +2146,21 @@
         },
         {
             "name": "kartik-v/yii2-social",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-social.git",
-                "reference": "5e52304b812ac24044dd3674507560db69c08fec"
+                "reference": "11b08537f3def563656626664621e757224af793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-social/zipball/5e52304b812ac24044dd3674507560db69c08fec",
-                "reference": "5e52304b812ac24044dd3674507560db69c08fec",
+                "url": "https://api.github.com/repos/kartik-v/yii2-social/zipball/11b08537f3def563656626664621e757224af793",
+                "reference": "11b08537f3def563656626664621e757224af793",
                 "shasum": ""
             },
             "require": {
-                "facebook/php-sdk-v4": "@dev",
-                "kartik-v/yii2-krajee-base": "@dev"
+                "facebook/php-sdk-v4": "~4.0",
+                "kartik-v/yii2-krajee-base": "~1.7"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -2176,7 +2170,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD 3-Clause"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -2196,7 +2190,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-02-13 03:35:22"
+            "time": "2015-07-19 17:12:48"
         },
         {
             "name": "kartik-v/yii2-sortable",
@@ -2788,16 +2782,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-select2",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-select2.git",
-                "reference": "ffc59cef18864d773c79f3b2da2f34c948ff5648"
+                "reference": "fd5d59d7e5aa4f15355e2d070a5e3095c322054b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/ffc59cef18864d773c79f3b2da2f34c948ff5648",
-                "reference": "ffc59cef18864d773c79f3b2da2f34c948ff5648",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/fd5d59d7e5aa4f15355e2d070a5e3095c322054b",
+                "reference": "fd5d59d7e5aa4f15355e2d070a5e3095c322054b",
                 "shasum": ""
             },
             "require": {
@@ -2832,7 +2826,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-12-16 19:38:06"
+            "time": "2015-12-21 17:38:29"
         },
         {
             "name": "kartik-v/yii2-widget-sidenav",

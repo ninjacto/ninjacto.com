@@ -38,7 +38,11 @@
             <li class="comment">
                 <article class="media"><div class="note"></div>
                     <a class="pull-left" href="#">
-                        <img class="media-object" width="87" height="87" src="<?= yii::$app->params['cdn'].'avatar.jpg';?>" alt="...">
+                        <?= \cebe\gravatar\Gravatar::widget([
+                            'email' => $comment->email,
+                            'options' => ['alt' => $comment->name,'class'=>'media-object'],
+                            'size' => 87
+                        ]);?>
                     </a>
                     <div class="media-body">
                         <h5 class="media-heading"><?= $comment->name; ?></h5>
@@ -53,7 +57,11 @@
                     <li class="comment">
                         <article class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" width="87" height="87" src="<?= yii::$app->params['cdn'].'avatar.jpg';?>" alt="...">
+                                <?= \cebe\gravatar\Gravatar::widget([
+                                    'email' => $comment->email,
+                                    'options' => ['alt' => $comment->name,'class'=>'media-object'],
+                                    'size' => 87
+                                ]);?>
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading"><?= $comment->name; ?></h5>
