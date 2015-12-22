@@ -12,6 +12,10 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'components' => [
+        'user' => [
+            'class' => 'yii\web\User',
+            'loginUrl' => ['site/login'],
+        ],
     ],
     'params' => $params,
 ];
