@@ -29,6 +29,7 @@ return [
     ],
     'components' => [
         'user' => [
+            'class' => 'yii\web\User', // User must implement the IdentityInterface
             'identityClass' => 'common\models\User', // User must implement the IdentityInterface
             'enableAutoLogin' => true,
             'loginUrl' => ['site/login'],
