@@ -7,8 +7,7 @@
 <div class="blog-view">
     <div class="row">
         <div class="col-md-12">
-            <img src="<?= yii::$app->params['cdn'].$model->poster->filename;?>" class="animated fadeInUp">
-
+            <img src="<?= yii::$app->params['cdn'].'posters/'.$model->poster;?>" class="animated fadeInUp">
             <h3 class="animated fadeInDown"><?= $model->title; ?> <small><span><?= $model->is_lts?'LTS':''; ?></span></small></h3>
 
             <div class="blogMeta animated fadeInDown">

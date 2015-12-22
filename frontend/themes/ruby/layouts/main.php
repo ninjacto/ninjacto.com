@@ -49,16 +49,16 @@ RubyAsset::register($this);
                             <button class="dl-trigger">Open Menu</button>
                             <ul class="dl-menu dl-menuopen">
                                 <li>
-                                    <?= yii\helpers\Html::a('Blog',['blog/index']);?>
+                                    <?= yii\helpers\Html::a('Blog',['/blog/index']);?>
                                 </li>
                                 <li>
-                                    <?= yii\helpers\Html::a('ABOUT ME',['site/about']);?>
+                                    <?= yii\helpers\Html::a('ABOUT ME',['/site/about']);?>
                                 </li>
                                 <li>
-                                    <?= yii\helpers\Html::a('CONTACT',['site/contact']);?>
+                                    <?= yii\helpers\Html::a('CONTACT',['/site/contact']);?>
                                 </li>
                                 <li>
-                                    <?= yii\helpers\Html::a('HIRE / DONATE ME!',['site/contact']);?>
+                                    <?= yii\helpers\Html::a('HIRE / DONATE ME!',['/site/contact']);?>
                                 </li>
                             </ul>
                         </div><!-- /dl-menuwrapper -->

@@ -4,6 +4,8 @@ namespace common\models;
 use creocoder\taggable\TaggableBehavior;
 use yii\behaviors\SluggableBehavior;
 use common\models\base\Post as PostBase;
+use yii\imagine\Image;
+use Imagine\Image\Box;
 
 class Post extends PostBase
 {
@@ -54,11 +56,13 @@ class Post extends PostBase
     public function upload()
     {
         if ($this->validate()) {
-            if(file_exists(\Yii::getAlias('@frontend/web/uploads/posters/') . $this->id . '.' . $this->poster->extension))
-                unlink(\Yii::getAlias('@frontend/web/uploads/posters/') . $this->id . '.' . $this->poster->extension);
-            $this->poster->saveAs(\Yii::getAlias('@frontend/web/uploads/posters/') . $this->id . '.' . $this->poster->extension);
+            $path = \Yii::getAlias('@frontend/web/uploads/posters/') . $this->id . '.' . $this->poster->extension;
+            if(file_exists($path))
+                unlink($path);
+            $this->poster->saveAs($path);
+            $this->createPoster($path);
             $this->poster = $this->id . '.' . $this->poster->extension;
-            $this->save(false);
+            $this->save();
             return true;
         } else {
             return false;
@@ -73,8 +77,64 @@ class Post extends PostBase
         return $names;
     }
 
+    public static function getLatest($limit)
+    {
+        return self::find()->orderBy('created_at DESC')->limit($limit)->all();
+    }
+
     public static function find()
     {
         return new \common\models\base\PostQuery(get_called_class());
+    }
+
+    function createPoster($imageName)
+    {
+        $newWidth=1980;
+        $newHeight=562;
+
+        $mime = getimagesize($imageName);
+
+        if($mime['mime']=='image/png'){ $src_img = imagecreatefrompng($imageName); }
+        if($mime['mime']=='image/jpg'){ $src_img = imagecreatefromjpeg($imageName); }
+        if($mime['mime']=='image/jpeg'){ $src_img = imagecreatefromjpeg($imageName); }
+        if($mime['mime']=='image/pjpeg'){ $src_img = imagecreatefromjpeg($imageName); }
+
+        $old_x = imageSX($src_img);
+        $old_y = imageSY($src_img);
+
+        if($old_x > $old_y)
+        {
+            $thumb_w    =   $newWidth;
+            $thumb_h    =   $old_y/$old_x*$newWidth;
+        }
+
+        if($old_x < $old_y)
+        {
+            $thumb_w    =   $old_x/$old_y*$newHeight;
+            $thumb_h    =   $newHeight;
+        }
+
+        if($old_x == $old_y)
+        {
+            $thumb_w    =   $newWidth;
+            $thumb_h    =   $newHeight;
+        }
+
+        $dst_img        =   ImageCreateTrueColor($thumb_w,$thumb_h);
+
+        imagecopyresampled($dst_img,$src_img,0,0,0,0,$thumb_w,$thumb_h,$old_x,$old_y);
+
+        if($mime['mime']=='image/png'){ $result = imagepng($dst_img,$imageName,8); }
+        if($mime['mime']=='image/jpg'){ $result = imagejpeg($dst_img,$imageName,80); }
+        if($mime['mime']=='image/jpeg'){ $result = imagejpeg($dst_img,$imageName,80); }
+        if($mime['mime']=='image/pjpeg'){ $result = imagejpeg($dst_img,$imageName,80); }
+
+        imagedestroy($dst_img);
+        imagedestroy($src_img);
+
+        if($thumb_w != $newWidth)
+            Image::crop($imageName,$newWidth,$newHeight,[(($thumb_w-$newWidth)/2),0])->save($imageName, ['quality' => 80]);
+        if($thumb_h != $newHeight)
+            Image::crop($imageName,$newWidth,$newHeight,[0,(($thumb_h-$newHeight)/2)])->save($imageName, ['quality' => 80]);
     }
 }
