@@ -29,7 +29,7 @@ return [
     ],
     'components' => [
         'user' => [
-            'identityClass' => 'common\models\User', // User must implement the IdentityInterface
+            'class' => 'common\models\User', // User must implement the IdentityInterface
             'enableAutoLogin' => true,
             'loginUrl' => ['site/login'],
         ],
