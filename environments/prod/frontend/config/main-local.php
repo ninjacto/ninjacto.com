@@ -8,7 +8,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'enableStrictParsing' => true,
+            'enableStrictParsing' => false,
             'suffix' => '.html',
             'rules' => [
                 'https://www.ninjacto.com/home' => '/blog/index',
