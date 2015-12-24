@@ -11,7 +11,7 @@ return [
             'enableStrictParsing' => true,
             'suffix' => '.html',
             'rules' => [
-                'https://www.ninjacto.com/' => '/blog/index',
+                'https://www.ninjacto.com/home' => '/blog/index',
                 'https://www.ninjacto.com/about' => '/site/about',
                 'https://www.ninjacto.com/contact' => '/site/contact',
                 'https://www.ninjacto.com/hire' => '/site/hire',
