@@ -9,11 +9,15 @@ display: block;
 max-width: 100%;
 height: auto;
 }
-body{
-    font-size: 16px;
+.blog-view .body{
+    font-size: 1.3em;
 }
 pre {
-    background-color: #2d2d2d!important;
+    background-color: #fdf6e3!important;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 0.8em;
 }
 .icon-4x{font-size: 50px;}
 .icon-5x {font-size: 5em;}
@@ -83,7 +87,7 @@ transition: all 0.4s; -webkit-transition: all 0.4s; -moz-transition: all 0.4s;-m
 .mobileNav .mobileClick { margin-right: 30px; float: right; font-size: 40px; line-height: 60px; cursor: pointer; }
 .closeMobile { font-size: 50px; text-align: center; display: block; cursor: pointer;}
 
-.mainFooter { background: #171a1f; padding: 30px 30px 30px 20px; overflow: hidden; position: absolute; left: 0; margin-top: 20px; }
+.mainFooter { width: 100%; background: #171a1f; padding: 30px 30px 30px 20px; overflow: hidden; position: absolute; left: 0; margin-top: 20px; }
 .mainFooter h3 { font-size: 28px; color: #e54242; margin-top: 0; display: block; border-bottom: 4px double #414141; line-height: 45px; }
 .portfolio .mainFooter { position: relative; margin-top: 0; }
 
@@ -490,7 +494,8 @@ color: #8c8c8c;
     display: block;
     width: 0;
 }
-.commentlist{padding: 0px;}
+.commentlist{padding: 0px;list-style: none;}
+.children{list-style: none;}
 .media{background: #f6f6f6;border-bottom: 5px solid #e8e8e8;margin-bottom: 10px;padding: 10px 10px 15px 10px;position: relative;overflow: visible;}
 .media-heading{margin-bottom: 3px;}
 .comment-date{color: #979797;font-size: 12px;margin: 0 0 13px;}
@@ -1325,7 +1330,7 @@ line-height: 24px;
 .mainFooter-white .text-widget {padding-top: 7px;}
 
 .mainFooter .popular-post {
-  padding-bottom:13px;
+  padding-bottom:26px;
   padding-top: 13px;
   border-bottom: 1px solid #414141;
 }

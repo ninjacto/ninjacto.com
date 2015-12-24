@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0c252730de57e34676df8e5b85b75440",
-    "content-hash": "08e083a85789e8601601d9ae84029bf9",
+    "hash": "e21de2e841d129140d546979f58d50d7",
+    "content-hash": "c030acb097c566052d7dcb4865de55d0",
     "packages": [
         {
             "name": "2amigos/yii2-disqus-widget",
@@ -2782,16 +2782,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-select2",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-select2.git",
-                "reference": "fd5d59d7e5aa4f15355e2d070a5e3095c322054b"
+                "reference": "f8475c5b895726e082a1614993c1aff64f77e367"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/fd5d59d7e5aa4f15355e2d070a5e3095c322054b",
-                "reference": "fd5d59d7e5aa4f15355e2d070a5e3095c322054b",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/f8475c5b895726e082a1614993c1aff64f77e367",
+                "reference": "f8475c5b895726e082a1614993c1aff64f77e367",
                 "shasum": ""
             },
             "require": {
@@ -2826,7 +2826,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-12-21 17:38:29"
+            "time": "2015-12-22 17:42:57"
         },
         {
             "name": "kartik-v/yii2-widget-sidenav",
@@ -3185,17 +3185,68 @@
             "time": "2014-11-09 19:54:17"
         },
         {
-            "name": "michelf/php-markdown",
-            "version": "1.5.0",
+            "name": "kop/yii2-scroll-pager",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "e1aabe18173231ebcefc90e615565742fc1c7fd9"
+                "url": "https://github.com/kop/yii2-scroll-pager.git",
+                "reference": "08b19abb2139ff18c91d5178f17891ab2fa14316"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/e1aabe18173231ebcefc90e615565742fc1c7fd9",
-                "reference": "e1aabe18173231ebcefc90e615565742fc1c7fd9",
+                "url": "https://api.github.com/repos/kop/yii2-scroll-pager/zipball/08b19abb2139ff18c91d5178f17891ab2fa14316",
+                "reference": "08b19abb2139ff18c91d5178f17891ab2fa14316",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "webcreate/jquery-ias": "~2.2.0",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "codeception/codeception": "~2.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kop\\y2sp\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Koptiev",
+                    "email": "ivan.koptiev@codex.systems",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Infinite AJAX scrolling for Yii2 ListView widget",
+            "homepage": "http://kop.github.io/yii2-scroll-pager/",
+            "keywords": [
+                "pager",
+                "pagination",
+                "scroll",
+                "scrolling",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-10-19 12:44:33"
+        },
+        {
+            "name": "michelf/php-markdown",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "155287e4222d2dd69b6a21221617b50668d5892e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/155287e4222d2dd69b6a21221617b50668d5892e",
+                "reference": "155287e4222d2dd69b6a21221617b50668d5892e",
                 "shasum": ""
             },
             "require": {
@@ -3218,14 +3269,14 @@
             ],
             "authors": [
                 {
-                    "name": "John Gruber",
-                    "homepage": "http://daringfireball.net/"
-                },
-                {
                     "name": "Michel Fortin",
                     "email": "michel.fortin@michelf.ca",
                     "homepage": "https://michelf.ca/",
                     "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "https://daringfireball.net/"
                 }
             ],
             "description": "PHP Markdown",
@@ -3233,7 +3284,7 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2015-03-01 12:03:08"
+            "time": "2015-12-22 18:18:12"
         },
         {
             "name": "michelf/php-smartypants",
@@ -4125,6 +4176,46 @@
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
             "time": "2015-11-18 13:48:51"
+        },
+        {
+            "name": "webcreate/jquery-ias",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webcreate/infinite-ajax-scroll.git",
+                "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webcreate/infinite-ajax-scroll/zipball/7380f74fca64180a4c5da18d01065a8aef0494b7",
+                "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "fieg",
+                    "email": "jeroen@fieg.nl",
+                    "homepage": "http://webcreate.nl"
+                }
+            ],
+            "description": "Infinite AJAX Scroll: A jQuery plugin that turns your server-side pagination into an infinite scrolling one using AJAX",
+            "homepage": "http://infiniteajaxscroll.com",
+            "keywords": [
+                "ajax",
+                "ias",
+                "infinite",
+                "jquery",
+                "pagination",
+                "scroll",
+                "scrolling"
+            ],
+            "time": "2015-05-08 14:58:16"
         },
         {
             "name": "yiidoc/yii2-redactor",

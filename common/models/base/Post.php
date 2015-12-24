@@ -14,6 +14,7 @@ use Yii;
  * @property string $body
  * @property string $slug
  * @property integer $is_lts
+ * @property integer $like
  * @property string $keyword
  * @property string $description
  * @property string $published_at
@@ -47,7 +48,7 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'title', 'body', 'slug'], 'required'],
-            [['user_id', 'is_lts'], 'integer'],
+            [['user_id', 'is_lts', 'like'], 'integer'],
             [['body'], 'string'],
             [['published_at', 'indexed_at', 'created_at', 'updated_at'], 'safe'],
             [['poster', 'title', 'slug', 'keyword'], 'string', 'max' => 255],
@@ -68,6 +69,7 @@ class Post extends \yii\db\ActiveRecord
             'body' => 'Body',
             'slug' => 'Slug',
             'is_lts' => 'Is Lts',
+            'like' => 'Like',
             'keyword' => 'Keyword',
             'description' => 'Description',
             'published_at' => 'Published At',

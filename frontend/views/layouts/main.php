@@ -160,7 +160,6 @@ RubyAsset::register($this);
                 </aside>
             </div>
             <section class="mainContent blogPage">
-                <?= Alert::widget() ?>
                 <?= $content ?>
 
             </section>

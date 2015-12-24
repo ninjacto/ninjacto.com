@@ -23,6 +23,8 @@ use Yii;
  */
 class Comment extends \yii\db\ActiveRecord
 {
+
+    public $verifyCode;
     /**
      * @inheritdoc
      */
@@ -37,11 +39,13 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['post_id', 'parent_comment_id', 'email', 'body'], 'required'],
+            [['post_id', 'email', 'body'], 'required'],
             [['post_id', 'parent_comment_id', 'status'], 'integer'],
             [['body'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
-            [['name', 'email'], 'string', 'max' => 255]
+            [['name', 'email'], 'string', 'max' => 255],
+            // verifyCode needs to be entered correctly
+            ['verifyCode', 'captcha'],
         ];
     }
 
@@ -60,6 +64,7 @@ class Comment extends \yii\db\ActiveRecord
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'verifyCode' => 'CAPTCHA',
         ];
     }
 

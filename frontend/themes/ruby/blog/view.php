@@ -1,24 +1,36 @@
 <?php
 /**
  * @var $this yii\web\View
- * @var $model common\models\Post
+ * @var $post common\models\Post
+ * @var $comment common\models\Comment
  */
+
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
+use kartik\markdown\MarkdownEditor;
 ?>
-<div class="blog-view">
+<div class="blog-view container">
     <div class="row">
         <div class="col-md-12">
-            <img src="<?= yii::$app->params['cdn'].'posters/'.$model->poster;?>" class="animated fadeInUp">
-            <h3 class="animated fadeInDown"><?= $model->title; ?> <small><span><?= $model->is_lts?'LTS':''; ?></span></small></h3>
+            <img src="<?= yii::$app->params['cdn'].'posters/'.$post->poster;?>" class="animated fadeInUp">
+            <h3 class="animated fadeInDown"><?= $post->title; ?> <small><span><?= $post->is_lts?'LTS':''; ?></span></small></h3>
 
             <div class="blogMeta animated fadeInDown">
-                <p>By: <a href="#"><?= $model->user->name; ?></a> | Tags: <?= implode(',', $model->getTagValues(true)); ?> | Comments: <a href="#"><?= count($model->comments); ?></a></p>
+                <p>
+                    By: <a href="#"><?= $post->user->name; ?></a> |
+                    Tags: <?= implode(',', $post->getTagValues(true)); ?> |
+                    Comments: <a href="#"><?= count($post->comments); ?></a> |
+                    Like: <a href="#"><?= $post->like; ?></a>
+                </p>
             </div>
-            <div class="animated fadeInDown">
-                <?= kartik\markdown\Markdown::convert($model->body); ?>
+            <div class="animated fadeInDown body">
+                <?= kartik\markdown\Markdown::convert($post->body); ?>
             </div>
         </div>
     </div>
-    <div class="shareit"><div class="note">
+    <div class="shareit">
+        <div class="note">
             <p>SPREAD THE WORLD</p>
             <div class="social-box"><a href="#"><i class="fa fa-facebook"></i></a></div>
             <div class="social-box"><a href="#"><i class="fa fa-twitter"></i></a></div>
@@ -32,7 +44,7 @@
     <div id="comment" class="comments-wrapper">
         <h3 class="comment-title">Comments</h3>
         <ol class="commentlist">
-            <?php foreach($model->comments as $comment):?>
+            <?php foreach($post->comments as $comment):?>
                 <?php if(empty($comment->parentComment)): ?>
             <li class="comment">
                 <article class="media"><div class="note"></div>
@@ -46,11 +58,11 @@
                     <div class="media-body">
                         <h5 class="media-heading"><?= $comment->name; ?></h5>
                         <p class="comment-date"><?= date('F j, Y \a\\t g:i a', strtotime($comment->created_at))?></p>
-                        <p><?= $comment->body; ?></p>
+                        <p><?= kartik\markdown\Markdown::convert($comment->body); ?></p>
                     </div>
                     <p class="reply">Reply</p>
                 </article>
-                    <?php foreach($model->comments as $childComment):?>
+                    <?php foreach($post->comments as $childComment):?>
                         <?php if(!empty($childComment->parentComment) && $childComment->parentComment->id == $comment->id): ?>
                 <ul class="children">
                     <li class="comment">
@@ -65,7 +77,7 @@
                             <div class="media-body">
                                 <h5 class="media-heading"><?= $comment->name; ?></h5>
                                 <p class="comment-date"><?= date('F j, Y \a\\t g:i a', strtotime($comment->created_at))?></p>
-                                <p><?= $comment->body; ?></p>
+                                <p><?= kartik\markdown\Markdown::convert($comment->body); ?></p>
                             </div>
                             <p class="reply">Reply</p>
                         </article>
@@ -80,63 +92,81 @@
 
         <div id="commentrespond" class="comment-respond">
             <h3 class="subTitle">LEAVE A <span>COMMENT</span></h3>
-            <p>veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni Nemo enim ipsam voluptatem quia voluptas sit aspernatur .</p>
-            <form role="form" id="commentform" class="comment-form" method="post" action="#">
-                <div class="col-md-4 form-group">
-                    <input type="name" class="required form-control" name="name" id="inputName" placeholder="Name">
+            <p></p>
+            <?php $form = ActiveForm::begin([
+                'id' => 'comment-form',
+                'layout' => 'horizontal',
+                'fieldConfig' => [
+                    'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+                    'horizontalCssClasses' => [
+                        'label' => '',
+                        'offset' => '',
+                        'wrapper' => 'col-sm-12',
+                        'error' => 'col-sm-12',
+                        'hint' => 'col-sm-12',
+                    ],
+                ],
+            ]); ?>
+            <?= $form->field($comment, 'post_id')->hiddenInput(['value'=>$post->id])->label(false) ?>
+            <div class="col-md-6">
+                <?= $form->field($comment, 'name', ['inputOptions' => ['placeholder'=>'Name']])->label(false) ?>
+            </div>
+            <div class="col-md-6">
+                <?= $form->field($comment, 'email', ['inputOptions' => ['placeholder'=>'CAPTCHA Code',]])->label(false) ?>
+            </div>
+
+            <div class="col-md-12">
+                <?= $form->field($comment, 'body', ['inputOptions' => ['placeholder'=>'Comment Body']])->label(false)->widget(MarkdownEditor::className(), [])?>
+                <?= $form->field($comment, 'verifyCode',[
+                    'inputOptions' => ['placeholder'=>'CAPTCHA Code',],
+                    'horizontalCssClasses' => [
+                        'label' => 'col-sm-6',
+                        'offset' => 'col-sm-offset-6',
+                        'wrapper' => 'col-sm-6',
+                        'error' => 'col-sm-6',
+                        'hint' => 'col-sm-6',
+                    ],
+                ])->label(false)->widget(Captcha::className(), [
+                    'template' => '<div class="col-sm-9" style="padding-left: 0">{input}</div><div class="col-sm-3" style="padding-right: 0">{image}</div>',
+                ]) ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Submit', ['class' => 'buton b_asset buton-2 buton-mini pull-right', 'name' => 'contact-button']) ?>
                 </div>
-                <div class="col-md-4 form-group">
-                    <input type="email" class="required form-control" name="email" id="inputEmail" placeholder="Email Address">
-                </div>
-                <div class="col-md-4 form-group">
-                    <input type="text" class="required form-control" name="subject" id="inputSubject" placeholder="Web Site">
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-md-12 form-group">
-                    <textarea class="required form-control" rows="11" name="comment" id="inputComment"></textarea>
-                </div>
-                <button type="submit" name="submit" value="SUBMIT" class="buton b_asset buton-2 buton-mini">SUBMIT</button>
-            </form>
+            </div>
+            <?php ActiveForm::end(); ?>
         </div>
+        <div class="clearfix"></div>
     </div>
     <div class="mainFooter animated fadeInUp">
         <div class="col-md-4">
             <h3>OUR STORY</h3>
             <div class="text-widget">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Aldus PageMaker including versions It uses a dictionary of over Power.</p>
+                <p></p>
             </div>
         </div>
         <div class="col-md-4">
             <h3>RECENT POSTS</h3>
 
             <div class="popular-post-widget">
-                <article class="popular-post">
-                    <img src="content/footer1.jpg" alt="vertec">
-                    <h6><a href="#">Sample Post with Standard Image &amp; Video</a></h6>
-                    <p class="popular-date">Posted 13 September 2013</p>
-                    <p class="popular-author"><a href="#">By Admin</a></p>
-                </article>
-                <article class="popular-post">
-                    <img src="content/footer2.jpg" alt="vertec">
-                    <h6><a href="#">Sample Post with Standard Image &amp; Video</a></h6>
-                    <p class="popular-date">Posted 13 September 2013</p>
-                    <p class="popular-author"><a href="#">By Admin</a></p>
-                </article>
+                <?php foreach (\common\models\Post::getLatest(2) as $item): ?>
+                    <article class="popular-post">
+                        <img src="<?= Yii::$app->params['cdn'].'posters/'.$item->poster; ?>" alt="<?= $item->title; ?>">
+                        <h6><?= \yii\helpers\Html::a($item->title,['blog/view','slug'=>$item->slug])?></h6>
+                        <p class="popular-date">Posted <?= date('j F Y', strtotime($item->created_at)) ?></p>
+                        <p class="popular-author"><a href="#">By <?= $item->user->name; ?></a></p>
+                    </article>
+                <?php endforeach;?>
             </div>
         </div>
         <div class="col-md-4">
-            <h3>FLICKR WIDGET</h3>
+            <h3>TWITTER</h3>
             <div class="flickr-widget">
-                <a href="#"><img src="content/flickr1.jpg" alt="vertec"></a>
-                <a href="#"><img src="content/flickr2.jpg" alt="vertec"></a>
-                <a href="#"><img src="content/flickr3.jpg" alt="vertec"></a>
-                <a href="#"><img src="content/flickr4.jpg" alt="vertec"></a>
-                <a href="#"><img src="content/flickr5.jpg" alt="vertec"></a>
-                <a href="#"><img src="content/flickr6.jpg" alt="vertec"></a>
-                <a href="#"><img src="content/flickr7.jpg" alt="vertec"></a>
-                <a href="#"><img src="content/flickr8.jpg" alt="vertec"></a>
+                <a class="twitter-timeline" href="https://twitter.com/ninjacto" data-widget-id="677700415312502785"
+                   data-chrome="noheader noborders transparent nofooter">
+                    Tweets by @ninjacto
+                </a>
             </div>
         </div>
     </div>
 </div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

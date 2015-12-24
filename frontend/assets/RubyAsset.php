@@ -26,7 +26,7 @@ class RubyAsset extends AssetBundle
         'css/main.css',
         'css/flexslider.css',
         'css/prettyPhoto.css',
-        'css/darkula.css',
+        'css/solarized_light.css',
     ];
     public $js = [
         'js/jquery-ui.js',
