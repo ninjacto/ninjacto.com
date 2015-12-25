@@ -14,7 +14,7 @@ use kartik\markdown\MarkdownEditor;
     <div class="row">
         <div class="col-md-12">
             <img src="<?= yii::$app->params['cdn'].'posters/'.$post->poster;?>" class="animated fadeInUp">
-            <h3 class="animated fadeInDown"><?= $post->title; ?> <small><span><?= $post->is_lts?'LTS':''; ?></span></small></h3>
+            <h1 class="animated fadeInDown"><?= $post->title; ?> <small><span><?= $post->is_lts?'LTS':''; ?></span></small></h1>
 
             <div class="blogMeta animated fadeInDown">
                 <p>
