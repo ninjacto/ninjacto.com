@@ -5,7 +5,7 @@ use yii\helpers\Url;
 ?>
 
 <div class="col-md-4 <?php if($count==3 || ($index+3) == $count): ?>noborders<?php endif; ?>">
-<div class="blog-box-4 animated fadeInLeft anim3">
+<div class="blog-box-4 animated fadeInLeft anim<?= ($index+1)%5 ?>">
     <a href="<?= Url::to(['/blog/view','slug'=>$model->slug])?>">
         <h3><?= Html::encode($model->title); ?> <span><?= (bool)$model->is_lts?"LTS":""; ?></span></h3>
         <img src="<?= Yii::$app->params['cdn'].'posters/'.$model->poster; ?>" alt="<?= Html::encode($model->title); ?>">
