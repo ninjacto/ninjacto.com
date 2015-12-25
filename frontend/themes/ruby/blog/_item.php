@@ -4,7 +4,7 @@ use yii\helpers\Url;
 /* @var $model \common\models\Post */
 ?>
 
-<?php if(($index%3) == 0): ?><div class="col-md-4 <?php if($count<3 || ($index+3) == $count): ?>noborders<?php endif; ?>"><?php endif; ?>
+<div class="col-md-4 <?php if($count==3 || ($index+3) == $count): ?>noborders<?php endif; ?>">
 <div class="blog-box-4 animated fadeInLeft anim3">
     <a href="<?= Url::to(['/blog/view','slug'=>$model->slug])?>">
         <h3><?= Html::encode($model->title); ?> <span><?= (bool)$model->is_lts?"LTS":""; ?></span></h3>
@@ -26,4 +26,4 @@ use yii\helpers\Url;
         <div class="postLike"><i class="fa fa-heart"></i> <?= $model->like; ?></div>
     </div>
 </div>
-<?php if((($index+1)%3) == 0 || ($index+1) == $count): ?></div><?php endif; ?>
+</div>
