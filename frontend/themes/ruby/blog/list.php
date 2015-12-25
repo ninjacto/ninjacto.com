@@ -3,6 +3,8 @@
 /* @var $item common\models\Post */
 use yii\widgets\ListView;
 use yii\helpers\Url;
+
+$this->title = 'Blog - Ninja CTO';
 ?>
 <div class="blog-list">
     <div class="html_carousel animated fadeInDown">
