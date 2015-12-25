@@ -1360,8 +1360,9 @@ line-height: 24px;
   margin: 0;
 }
 
-.mainFooter .popular-post .popular-author, .mainFooter .popular-post .popular-author a {
-  color: #5e5e5e;
+.mainFooter .popular-post .popular-author, .mainFooter .popular-post .popular-author a,
+.sandboxroot, .p-author .profile .p-name, .custom-timeline-owner-profile .p-name, .cards-base p, .cards-base p a, .timeline-header .custom-timeline-summary, .timeline-header .custom-timeline-summary a:link, .timeline-header .custom-timeline-summary a:visited, .timeline-header .summary, .timeline-header .summary a:link, .timeline-header .summary a:visited, .p-author a.profile:hover .p-name, .p-author a.profile:focus .p-name{
+  color: #5e5e5e!important;
   font-size: 14px;
   margin: 0;
 }
