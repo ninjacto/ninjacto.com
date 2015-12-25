@@ -84,7 +84,7 @@ class BlogController extends Controller
                 Yii::$app->session->setFlash('success', [
                     'type' => 'success',
                     'duration' => 12000,
-                    'icon' => 'fa fa-users',
+                    'icon' => 'fa fa-chat',
                     'message' => 'You\'re comment successfully stored and will shown after approval.',
                     'title' => 'Saving Comment',
                 ]);
@@ -92,7 +92,7 @@ class BlogController extends Controller
                 Yii::$app->session->setFlash('error', [
                     'type' => 'danger',
                     'duration' => 12000,
-                    'icon' => 'fa fa-users',
+                    'icon' => 'fa fa-chat',
                     'message' => 'Sorry but we couldn\'t store your comment.',
                     'title' => 'Saving Comment',
                 ]);
