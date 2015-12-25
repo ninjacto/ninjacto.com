@@ -9,6 +9,8 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use kartik\markdown\MarkdownEditor;
+
+$this->title = $post->title . ' - Ninja CTO';
 ?>
 <div class="blog-view container">
     <div class="row">
@@ -112,7 +114,7 @@ use kartik\markdown\MarkdownEditor;
                 <?= $form->field($comment, 'name', ['inputOptions' => ['placeholder'=>'Name']])->label(false) ?>
             </div>
             <div class="col-md-6">
-                <?= $form->field($comment, 'email', ['inputOptions' => ['placeholder'=>'CAPTCHA Code',]])->label(false) ?>
+                <?= $form->field($comment, 'email', ['inputOptions' => ['placeholder'=>'Email',]])->label(false) ?>
             </div>
 
             <div class="col-md-12">
