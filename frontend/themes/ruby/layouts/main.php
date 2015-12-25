@@ -104,7 +104,7 @@ RubyAsset::register($this);
 
                 </aside>
             </div>
-            <section class="mainContent singlePage">
+            <section class="mainContent blogPage">
                 <?= $content ?>
             </section>
         </div>
