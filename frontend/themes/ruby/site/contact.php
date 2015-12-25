@@ -69,7 +69,15 @@ $this->params['breadcrumbs'][] = $this->title;
                             ]
                         ])?>
 
-                        <?= $form->field($model, 'captcha')->widget('Zelenin\yii\widgets\Recaptcha\widgets\Recaptcha', [
+                        <?= $form->field($model, 'captcha',[
+                        'horizontalCssClasses' => [
+                            'label' => 'col-sm-2',
+                            'offset' => 'col-sm-offset-2',
+                            'wrapper' => 'col-sm-10',
+                            'error' => 'col-sm-10',
+                            'hint' => 'col-sm-10',
+                        ],
+                        ])->label(false)->widget('Zelenin\yii\widgets\Recaptcha\widgets\Recaptcha', [
                             'clientOptions' => [
                                 'data-sitekey' => '6LfU0xMTAAAAAPa-B0U6o-WWwgGhMnyrVr7bPiFm'
                             ]

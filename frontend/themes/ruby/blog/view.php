@@ -119,7 +119,7 @@ $this->title = $post->title . ' - Ninja CTO';
 
             <div class="col-md-12">
                 <?= $form->field($comment, 'body', ['inputOptions' => ['placeholder'=>'Comment Body']])->label(false)->widget(MarkdownEditor::className(), [])?>
-                <?= $form->field($model, 'captcha')->widget('Zelenin\yii\widgets\Recaptcha\widgets\Recaptcha', [
+                <?= $form->field($comment, 'captcha')->label(false)->widget('Zelenin\yii\widgets\Recaptcha\widgets\Recaptcha', [
                     'clientOptions' => [
                         'data-sitekey' => '6LfU0xMTAAAAAPa-B0U6o-WWwgGhMnyrVr7bPiFm'
                     ]

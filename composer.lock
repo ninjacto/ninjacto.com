@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e21de2e841d129140d546979f58d50d7",
-    "content-hash": "c030acb097c566052d7dcb4865de55d0",
+    "hash": "30207aef76611c3c38239425bb36e45c",
+    "content-hash": "3d70296556982294b1479a220b859f5b",
     "packages": [
         {
             "name": "2amigos/yii2-disqus-widget",
@@ -4639,6 +4639,51 @@
                 "yii2"
             ],
             "time": "2015-05-10 22:12:32"
+        },
+        {
+            "name": "zelenin/yii2-recaptcha-widget",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zelenin/yii2-recaptcha-widget.git",
+                "reference": "2501eaf8b77229b3fae920e1bc2b630cd1c6843d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zelenin/yii2-recaptcha-widget/zipball/2501eaf8b77229b3fae920e1bc2b630cd1c6843d",
+                "reference": "2501eaf8b77229b3fae920e1bc2b630cd1c6843d",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "Zelenin\\yii\\widgets\\Recaptcha\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksandr Zelenin",
+                    "email": "aleksandr@zelenin.me",
+                    "homepage": "http://zelenin.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 reCAPTCHA widget",
+            "homepage": "https://github.com/zelenin/yii2-recaptcha-widget",
+            "keywords": [
+                "captcha",
+                "google",
+                "recaptcha",
+                "yii2"
+            ],
+            "time": "2014-12-06 00:00:00"
         }
     ],
     "packages-dev": [
