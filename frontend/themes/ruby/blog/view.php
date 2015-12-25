@@ -119,17 +119,10 @@ $this->title = $post->title . ' - Ninja CTO';
 
             <div class="col-md-12">
                 <?= $form->field($comment, 'body', ['inputOptions' => ['placeholder'=>'Comment Body']])->label(false)->widget(MarkdownEditor::className(), [])?>
-                <?= $form->field($comment, 'verifyCode',[
-                    'inputOptions' => ['placeholder'=>'CAPTCHA Code',],
-                    'horizontalCssClasses' => [
-                        'label' => 'col-sm-6',
-                        'offset' => 'col-sm-offset-6',
-                        'wrapper' => 'col-sm-6',
-                        'error' => 'col-sm-6',
-                        'hint' => 'col-sm-6',
-                    ],
-                ])->label(false)->widget(Captcha::className(), [
-                    'template' => '<div class="col-sm-9" style="padding-left: 0">{input}</div><div class="col-sm-3" style="padding-right: 0">{image}</div>',
+                <?= $form->field($model, 'captcha')->widget('Zelenin\yii\widgets\Recaptcha\widgets\Recaptcha', [
+                    'clientOptions' => [
+                        'data-sitekey' => '6LfU0xMTAAAAAPa-B0U6o-WWwgGhMnyrVr7bPiFm'
+                    ]
                 ]) ?>
                 <div class="form-group">
                     <?= Html::submitButton('Submit', ['class' => 'buton b_asset buton-2 buton-mini pull-right', 'name' => 'contact-button']) ?>

@@ -24,7 +24,7 @@ use Yii;
 class Comment extends \yii\db\ActiveRecord
 {
 
-    public $verifyCode;
+    public $captcha;
     /**
      * @inheritdoc
      */
@@ -45,7 +45,11 @@ class Comment extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'email'], 'string', 'max' => 255],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            [
+                'captcha',
+                'Zelenin\yii\widgets\Recaptcha\validators\RecaptchaValidator',
+                'secret' => '6LfU0xMTAAAAAJV4-wSxZGTW-zb_hHkV0LPcMgLN'
+            ]
         ];
     }
 

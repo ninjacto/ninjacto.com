@@ -15,7 +15,7 @@ class ContactForm extends Model
     public $website;
     public $subject;
     public $body;
-    public $verifyCode;
+    public $captcha;
 
     /**
      * @inheritdoc
@@ -24,11 +24,15 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body', 'verifyCode'], 'required'],
+            [['name', 'email', 'subject', 'body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            [
+                'captcha',
+                'Zelenin\yii\widgets\Recaptcha\validators\RecaptchaValidator',
+                'secret' => '6LfU0xMTAAAAAJV4-wSxZGTW-zb_hHkV0LPcMgLN'
+            ]
         ];
     }
 

@@ -69,16 +69,10 @@ $this->params['breadcrumbs'][] = $this->title;
                             ]
                         ])?>
 
-                        <?= $form->field($model, 'verifyCode',[
-                            'horizontalCssClasses' => [
-                                'label' => 'col-sm-2',
-                                'offset' => 'col-sm-offset-2',
-                                'wrapper' => 'col-sm-10',
-                                'error' => 'col-sm-10',
-                                'hint' => 'col-sm-10',
-                            ],
-                        ])->widget(Captcha::className(), [
-                            'template' => '<div class="col-sm-3" style="padding-left: 0">{image}</div><div class="col-sm-9" style="padding-right: 0">{input}</div>',
+                        <?= $form->field($model, 'captcha')->widget('Zelenin\yii\widgets\Recaptcha\widgets\Recaptcha', [
+                            'clientOptions' => [
+                                'data-sitekey' => '6LfU0xMTAAAAAPa-B0U6o-WWwgGhMnyrVr7bPiFm'
+                            ]
                         ]) ?>
 
                         <div class="form-group">
