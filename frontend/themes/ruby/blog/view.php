@@ -156,7 +156,7 @@ $this->title = $post->title . ' - Ninja CTO';
         <div class="col-md-4">
             <h3>TWITTER</h3>
             <div class="flickr-widget">
-                <a class="twitter-timeline" href="https://twitter.com/ninjacto" data-widget-id="677700415312502785"
+                <a class="twitter-timeline" href="https://twitter.com/ninjacto" data-widget-id="680301617745362944"
                    data-chrome="noheader noborders transparent nofooter">
                     Tweets by @ninjacto
                 </a>
